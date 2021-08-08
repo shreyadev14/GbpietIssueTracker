@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layouts::header">
+<meta charset="UTF-8">
+<title> All Reporters</title>
+</head>
+<body>
+<nav th:replace="layouts::navbar"></nav>
+ <h3>List of Reporters</h3>
+ <div >
+      <!--  Add New Employee Button -->
+			<a th:href="@{/Reporter/newReporter}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Reporter 
+			</a> 
+			<br></br>
+   
+ 
+     <table class="table table-bordered table-striped">
+	   <thead class="thead-dark">
+	   <tr>
+	   <th>Enroll No </th>
+	   <th> Name</th>
+	   <th> Father's Name</th>
+	   <th> Branch</th>
+	   <th> Semester</th>
+	   <th> Year</th>
+       </tr>
+	   </thead>
+		     <tbody>
+		     <tr th:each="rep:${reporters}">
+		     <td th:text="${rep.R_Enroll_No}"/>
+		      <td th:text="${rep.R_Name}"/>
+		      <td th:text="${rep.R_Father_Name}"/>
+		      <td th:text="${rep.R_Branch}"/>
+		      <td th:text="${rep.R_Semester}"/>
+		      <td th:text="${rep.R_Year}"/>
+		      </tr>
+		    </tbody> 
+	   </table>
+</div>
+ 
+ 
+</body>
+</html>

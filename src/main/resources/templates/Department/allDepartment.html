@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+
+<head th:replace="layouts::header">
+<title>All Departments</title>
+</head>
+<body  >
+ <nav th:replace="layouts::navbar"></nav>
+  <h3>List of Departments</h3>
+   
+   <div >
+       <!--  Add New Employee Button -->
+			<a th:href="@{/Department/newDepartment}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Department
+			</a> 
+			<br></br>
+    
+    
+     <table class="table table-bordered table-striped">
+	   <thead class="thead-dark">
+	   <tr>
+	   <th>Department Id</th>
+	   <th>Department Name</th>
+	   </tr>
+	   </thead>
+		     <tbody>
+		     <tr th:each="dept:${allDept}">
+		     <td th:text="${dept.D_ID}"/>
+		      <td th:text="${dept.D_Name}"/>
+		      </tr>
+		    </tbody> 
+	   </table>
+</div>
+</body>
+</html>

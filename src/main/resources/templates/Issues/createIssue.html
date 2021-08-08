@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layouts::header">
+<meta charset="UTF-8">
+<title>Create Issue</title>
+</head>
+<body>
+<nav th:replace="layouts::navbar"></nav>
+<div>
+<form action="/Issue/save" th:object="${issue}" method="POST">
+
+		<input type="text" placeholder="Issue Title" th:field="${issue.ISSUE_TITLE}">
+		
+		 <select th:field="${issue.ISSUE_STATUS}">
+			<option th:value="Registered"> Registered</option>
+			<option th:value="Accepted"> Accepted</option>
+			<option th:value="Rejected"> Rejected</option>
+	   	</select>
+		
+		<textarea  placeholder="ISSUE DETAILS" th:field="${issue.ISSUE_DESCRIPTION}"></textarea>
+		
+		 <select th:field="*{ISSUE_DEPARTMENT}" >
+		<option th:each="dept:${departments}"
+		        th:value="${dept.D_ID}"
+		        th:text="${dept.D_Name}">
+		</option>
+		</select> 
+		
+		 <select th:field="*{ISSUE_REPORTER}" >
+		<option th:each="rep:${reporters}"
+		        th:value="${rep.R_Enroll_No}"
+		        th:text="${rep.R_Name}">
+		</option>
+		</select> 
+		
+		
+		<button type="submit">Create Issue</button>
+		
+		</form>
+	</div>
+</body>
+</html>
