@@ -7,7 +7,7 @@
 <body>
 <nav th:replace="layouts::navbar"></nav>
 <div>
-<form action="/Issue/save" th:object="${issue}" method="POST">
+<form action="/Issues/save" th:object="${issue}" method="POST">
 
 		<input type="text" placeholder="Issue Title" th:field="${issue.ISSUE_TITLE}">
 		

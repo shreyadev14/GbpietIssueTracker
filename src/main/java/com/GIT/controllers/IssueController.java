@@ -20,7 +20,7 @@ import org.springframework.ui.Model;
 
 
 @Controller
-@RequestMapping("/Issue")
+@RequestMapping("/Issues")
 public class IssueController {
  
 	@Autowired
@@ -52,12 +52,14 @@ public class IssueController {
   {
 	   isRepo.save(issue);
 	   
-	   return "redirect:Issues/createIssue";
+	   return "redirect:/Issues/display";
 	  
   }
   
    @GetMapping("/display")
-   public String displayIssue() {
+   public String displayIssue(Model model) {
+	   List<Issues>allIssues=isRepo.findAll();
+	   model.addAttribute("allIssues",allIssues);
 	   return "Issues/displayIssue";
    }
 

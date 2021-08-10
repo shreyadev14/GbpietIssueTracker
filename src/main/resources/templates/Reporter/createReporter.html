@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="layouts::header">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Create Reporter</title>
 </head>
 <body>
-hey reporter !
+<nav th:replace="layouts::navbar"></nav>
+<form action ="/Reporter/save"  th:object="${rep}" method ="post">
+ <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Enroll No" th:field="${rep.R_Enroll_No}">
+    </div>
+    
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Name" th:field="${rep.R_Name}">
+    </div>
+    
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Father Name" th:field="${rep.R_Father_Name}">
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Branch" th:field="${rep.R_Branch}">
+    </div>
+  
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Semester" th:field="${rep.R_Semester}">
+    </div>
+    
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Year" th:field="${rep.R_Year}">
+    </div>
+    </div>
+     <div class="form-row">
+     <div class="col">
+      <input type="text" class="form-control" placeholder="Mobile" th:field="${rep.R_Mobile}">
+    </div>
+    
+      <div class="col">
+      <input type="text" class="form-control" placeholder="Email" th:field="${rep.R_Email}">
+    </div>
+     
+     <div class="col">
+     <button type="submit" class="form-control" name="Submit">Submit </button>
+  </div>>
+  </div>
+</form>
 </body>
 </html>

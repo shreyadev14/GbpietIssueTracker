@@ -6,12 +6,19 @@
 </head>
 <body>
 <nav th:replace="layouts::navbar"></nav>
- <!--  Add New Employee Button -->
-			<a th:href="@{/}"
-				class="btn btn-primary btn-sm mb-3"> 
-				Register Issue 
-			</a> 
-			<br></br>
- <span>All your Issues are displayed here.....</span>
-</body>
+  <h3 >Running Issues</h3>
+  <div class="row" >
+  
+  <div class="card col-6" th:each="issue:${allIssues}">
+		  
+		  <div class="card-header" th:text="${issue.ISSUE_TITLE}">
+		   </div>
+		  
+		 <div class="card-body">
+		    <p class="card-text" th:text="${issue.ISSUE_DESCRIPTION}" ></p>
+		    <a href="#" class="btn btn-primary">UPVOTE</a>
+		  </div>
+</div>
+</div>
+ </body>
 </html>

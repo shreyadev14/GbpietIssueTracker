@@ -34,10 +34,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" th:href="@{/}">Home </a>
+        <a class="nav-link" th:href="@{/home}">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/Issue/display}">Issues</a>
+        <a class="nav-link" th:href="@{/Issues/display}">Issues</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" th:href="@{/Department/allDepartment}">Departments</a>
@@ -45,7 +45,17 @@
       <li class="nav-item">
         <a class="nav-link" th:href="@{/Reporter/allReporter}">Reporters</a>
       </li>
+       </ul>
+     <!--  Add New Issue Button -->
+     <ul  class="navbar-nav .mr-auto mt-2 mt-lg-0">
+     <li class="nav-item">
+      <a  th:href="@{/Issues/newIssue}"
+	  class="btn btn-primary btn-sm "> 
+	   Register Issue 
+		</a> 
+      </li>
      </ul>
+    
     </div>
 </nav>
 </body>

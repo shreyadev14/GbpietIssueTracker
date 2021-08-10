@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head th:replace="layouts::header"></head>
+<body>
+<nav th:replace="layouts::navbar"></nav>
+<form action ="/Department/save"  th:object="${dept}" method ="post">
+<span> Department Id:<input type="text" th:field="${dept.D_ID}"></span>
+<span> Department Name:<input type="text" th:field="${dept.D_Name}"></span>
+<button type="submit" name="Submit">Submit </button>
+</form>
 </body>
 </html>
+
+
