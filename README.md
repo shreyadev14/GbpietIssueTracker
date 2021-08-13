@@ -8,4 +8,6 @@ My final year project which tracks the progress of the issues registered in our 
 *JPA -Hibernate
 *Maven -build
 *Thymeleaf
+*HTML
+*Bootstrap
 
